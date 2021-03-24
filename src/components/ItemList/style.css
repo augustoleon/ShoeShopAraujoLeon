@@ -1,0 +1,10 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(6,auto); 
+    height: 100%;
+    width: 100%;
+    /* max-width: 1200px; */
+    grid-auto-flow: dense;
+    justify-items: center;
+}
