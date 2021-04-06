@@ -12,14 +12,18 @@ function App() {
     <div className="App">
       <NavBar/>
       <Switch>
+        <Route exact path= '/'>
+        <ItemListContainer greeting= 'Component List here'/>
+        </Route>
 
-        <Route path= '/detail'>
+        <Route exact path='/category/:categoryId'>
+          <ItemListContainer greeting= 'Shoe/es' />
+        </Route>
+
+        <Route path= '/item/:itemId'>
         <ItemDetailContainer/>
         </Route>
 
-        <Route path= '/list'>
-        <ItemListContainer greeting= 'Component List here'/>
-        </Route>
 
       </Switch>      
     </div>    
