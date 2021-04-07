@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {ItemCount} from '../ItemCount';
 import {ItemList} from '../ItemList';
 import {useParams} from 'react-router-dom';
 
 
-const limitStock= 5;
+
 
 export const ItemListContainer= (props) =>{
     const [items, setItems] = useState([]);
@@ -36,12 +35,8 @@ export const ItemListContainer= (props) =>{
         })
     },[categoryId])
 
-    const onAdd = (number) => number === 0 ? alert(`No puedes agregar ${number} unidades al carrito`) : alert(`Agregaste ${number} unidades al carrito`)
-    console.log('useParams',useParams())
-
     return <div>{props.greeting}
         <div class="container-fluid">
-        {/* <ItemCount stock={limitStock} initial={1} onAdd= {onAdd} /> */}
         <ItemList items = {items}/>
         </div>
     </div>
