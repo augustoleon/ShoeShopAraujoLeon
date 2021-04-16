@@ -10,24 +10,30 @@ const products = [
 
 // {title:'Nike JanoskiMax', price: 200, description: 'Diseñadas para ti, Item: '+ id, img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK4jx3pGt6hUoRK00AUtRwvtSz3OMvbcCHAw&usqp=CAU'}
 
-const getItems = (id) => { 
-    return new Promise((resolve)=>{
+const getItems = () => { 
+    return new Promise((resolve) => {
         setTimeout(()=>{
             resolve(products)}
         ,2000)
     })
 }
 
-export const  ItemDetailContainer =() => {
+export const  ItemDetailContainer = () => {
     const [item, setItem] = useState([])
     
-    const {itemId} = useParams()
+    const { itemId } = useParams()
 
     useEffect(() => {
         getItems()
-        .then((res)=> setItem(res.find((elemento)=> elemento.id === itemId)))
-        return;
+            .then((res) => setItem(res.find((elemento) => elemento.id === itemId)))
+        return setItem([]);
     }, [itemId])
-
-    return <ItemDetail item={item} />
+    return (
+        <>
+            {
+                item.title ? 
+                <ItemDetail item={item} /> : <div>loading...</div>
+            }
+        </>
+    )
 }
