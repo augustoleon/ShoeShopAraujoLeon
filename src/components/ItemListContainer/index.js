@@ -20,12 +20,20 @@ export const ItemListContainer = (props) => {
     
     
     useEffect(() => {
-        const db = getFirestore();  
-        const itemsCollection = db.collection('items');
-        const prom = itemsCollection.get();
+        const db = getFirestore(); // conexión a la base de datos
+        const itemsCollection = db.collection('items'); // conectame con la siguiente colección
+        const prom = itemsCollection.get(); // Traeme todo lo que exista en esa colección
 
-        prom.then((res) => {
-            console.log('se consultaron los datos /n')
+        prom.then((snapshot) => {
+            console.log('se consultaron los datos');
+            console.log(snapshot);
+
+            if(snapshot.size > 0){
+                console.log(snapshot.docs.map(doc => doc.data()))
+                setItems(snapshot.docs.map(doc => {
+                    return {id: doc.id, ...doc.data()}
+                }));
+            }
             // if(categoryId === undefined) {
             //     setItems(res);
             // } else {
