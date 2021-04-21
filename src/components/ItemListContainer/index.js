@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {ItemList} from '../ItemList';
 import {useParams} from 'react-router-dom';
-// import {getFirestore} from '../../firebase'
+import {getFirestore} from '../../firebase'
 
 
 const products = [
@@ -20,18 +20,17 @@ export const ItemListContainer = (props) => {
     
     
     useEffect(() => {
-        const prom = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(products)
-            }, 3000);
-        })
+        const db = getFirestore();  
+        const itemsCollection = db.collection('items');
+        const prom = itemsCollection.get();
 
         prom.then((res) => {
-            if(categoryId === undefined) {
-                setItems(res);
-            } else {
-                setItems(res.filter((product) => product.category === categoryId));
-            }
+            console.log('se consultaron los datos /n')
+            // if(categoryId === undefined) {
+            //     setItems(res);
+            // } else {
+            //     setItems(res.filter((product) => product.category === categoryId));
+            // }
         })
     }, [categoryId])
 
