@@ -9,7 +9,9 @@ export const Item = ({ item }) => {
             <div className="card-body">
                 <h5 className="card-title">{item.title}</h5>
                 <p className="card-text">${item.price}</p>
-                <Link to={`/item/${item.id}`}> Link al Item</Link>
+                <Link to={`/item/${item.id}`}>
+                    <button type="button" className="btn btn-outline-info">Agregar</button>
+                </Link>
             </div>
         </div>        
 

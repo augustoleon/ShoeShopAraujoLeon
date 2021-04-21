@@ -29,7 +29,7 @@ function App() {
             </Route>
 
             <Route path= '/cart'>
-              <h2> Estoy en el Carrito</h2>
+              <h2> ¡Estamos a punto de terminar!</h2>
               <Cart/>
             </Route>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardWidget } from '../CardWidget';
+import { CartWidget } from '../CartWidget';
 import {Link} from 'react-router-dom';
 
 export const NavBar = ({item}) => {
@@ -31,7 +31,7 @@ export const NavBar = ({item}) => {
                     </li>
                     </ul>
                     <form className="form-inline my-2 my-lg-0">
-                        <CardWidget/>
+                        <CartWidget/>
                     </form>
                 </div>
                 </nav>            

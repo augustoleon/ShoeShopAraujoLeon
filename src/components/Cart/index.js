@@ -20,29 +20,30 @@ export const Cart = () => {
         })
         console.log(orden)
     }
-    console.log('CART', cart)
 
     return(
         <div>
+            
             {
-                !cart.length ?
-                <h2> No hay items en el carrito <Link to='/'> Ir al Home</Link></h2>:
-                (<>
-                    { cart.map((cartItem) => 
-                            
-                        <div key= {cartItem.item.id}>
-                            <div>Titulo: {cartItem.item.title} </div>
-                            <div>Cantidad: {cartItem.cant}</div>
-                            <button onClick= {() => removeItem(cartItem.item.id)}> Borrar</button>
-                            <div>Total: {totalItems} y {totalPrecio}</div>
-                            <button onClick={gererarOrden}> Terminar la compra </button>
-                        </div>
+            !cart.length ?
+            <h2> No hay items en el carrito <Link to='/'> Ir al Home</Link></h2>
+            :(<>
+                { cart.map((cartItem) => (                        
+                    <div key= {cartItem.item.id}>
+                        <div>Titulo: {cartItem.item.title} </div>
+                        <div>Cantidad: {cartItem.cant}</div>
+                        <button type="button" className="btn btn-danger" onClick= {() => removeItem(cartItem.item.id)}> Borrar </button>
+                    </div>)
+                )}          
+                        <div>Monto Total: ${totalPrecio}</div>
+                        <div className="d-flex justify-content-center" >
+                        <button type="button" className="btn btn-primary w-40" onClick={gererarOrden}>Finalizar</button>
+                        </div> 
+                        
 
-                    )}
-         
+                </>
 
-                    </>
-                )
+            )
             }
 
 
