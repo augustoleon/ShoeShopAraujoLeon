@@ -25,11 +25,12 @@ export const  ItemDetailContainer = () => {
 
                 if(res.exists){
 
-                    setItem(res.data())
+                    setItem({id: res.id, ...res.data()})
                 }
             })
         return setItem([]);
     }, [itemId])
+    
     return (
         <>
             {
