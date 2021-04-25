@@ -27,14 +27,11 @@ export const CartProvider = ({ children }) => {
 
     const addItem = (newItem, quantity) => {
         console.log("cant", quantity)
-        //debugger;
-        //console.log('NUEVO ITEM Y CANTIDAD',newItem, ' ', quantity, 'Este es el CART ', cart)
         let prodIndex = cart.findIndex(e => e.item.id === newItem.id);
         if (prodIndex === -1) {
             setCart(cart => [...cart, {item: newItem, cant: quantity} ])
             // setCart([...cart, {item: newItem, cant: quantity} ])
         } else {
-            console.log("else")
             let modifiedCart = [...cart];
             modifiedCart[prodIndex].cant += quantity;
             setCart(modifiedCart)

@@ -1,6 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { CartWidget } from '../CartWidget';
 
 export const ItemCount = ({ stock, initial, onAdd })=> {
+
+    const {totalItems} = useContext(CartContext);
+    console.log('TOTAL ITEMS CARTWIDGET desde itemCount',totalItems)
+
 
     const [count, setCount] = useState(parseInt(initial));
 

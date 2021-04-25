@@ -10,7 +10,11 @@ export const ItemDetail = ({ item }) => {
 
     const { addItem } = useContext(CartContext);
 
-    const onAdd = number => setCount(number);
+    const onAdd = (cantidadAgregada) => {
+        const cant  = parseInt(cantidadAgregada);
+        addItem(item, cant);
+        setCount(cant);
+    };
 
     return(
         <div>
@@ -23,7 +27,7 @@ export const ItemDetail = ({ item }) => {
             :
                 <Link to='/cart'>
                     <div className="d-flex justify-content-center" >
-                        <button type="button" className="btn btn-primary w-40" onClick={e => addItem(item, count)}>Terminar la compra</button>
+                        <button type="button" className="btn btn-primary w-40" >Terminar la compra</button>
                     </div>          
                 </Link>
             }
