@@ -1,0 +1,11 @@
+.cartItem {
+    background-color: rgba(4, 12, 88, 0.9);
+}
+.cartItem:hover {
+    transform: translate(3px,3px);
+    box-shadow: 3px 3px 8px grey;
+}
+
+.card-body {
+    color: white;
+}
