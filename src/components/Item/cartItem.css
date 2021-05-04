@@ -1,9 +1,13 @@
 .cartItem {
     background-color: rgba(4, 12, 88, 0.9);
+    font-family: 'Zen Dots', cursive;
+    font-size: 16px;
+
 }
 .cartItem:hover {
     transform: translate(3px,3px);
     box-shadow: 3px 3px 8px grey;
+    border: white;
 }
 
 .card-body {

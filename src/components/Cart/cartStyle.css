@@ -1,0 +1,33 @@
+.cartInside {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cartInside img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.cartInside img:hover {
+    transform: translate(3px,3px);
+    box-shadow: 3px 3px 8px blue;
+    border: 1px solid orangered;
+}
+
+.titleCant {
+    display: flex;
+    justify-content: space-evenly;
+    width: 700px;
+    background-color: black;
+    border: 1.7px dotted white;
+}
+
+.titleCant div{
+    font-family: 'Zen Dots', cursive;
+    cursor: pointer;
+    color: white;
+}

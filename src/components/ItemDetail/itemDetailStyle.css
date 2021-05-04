@@ -1,0 +1,27 @@
+.itemDetail { 
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    margin-right: 100px;
+}
+
+.itemDetail img {
+    width: 500px;
+    height: 500px;
+}
+
+.titlePrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    margin-left: 100px;
+}
+
+.titlePrice:first-child {
+    background-color: black;
+    color: white;
+    
+}

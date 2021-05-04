@@ -1,0 +1,65 @@
+.formStyle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nombreTel {
+    display: flex;
+    flex-direction: row;
+
+    border: 1px solid black ;
+}
+
+.nombreTel input{
+    width: 100%;
+}
+
+.form-control {
+    width: 80%;
+    margin-left: 30px;
+
+}
+
+.check {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-left:100px;
+    border-radius: 100%;  
+    
+    animation-name: check;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes check {
+    0% {        
+        background-color:hsl(110, 50%, 40%) ;
+    }
+
+    20% {
+        background-color:rgb(53, 175, 37) ; 
+        ;
+    }
+
+    40% {        
+        background-color: hsl(120, 98%, 43%);
+
+    }
+
+    /* con transform: scale() aumenta el tamaño en la misma posición */
+    65% {
+        background-color:rgb(53, 175, 37) ; 
+        transform: scale(1.2);  
+        border-radius: 100%; 
+            
+    }
+
+    100% {
+        background-color:hsl(110, 50%, 40%) ;
+    }
+}

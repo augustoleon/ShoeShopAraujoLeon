@@ -29,11 +29,7 @@ export const ItemListContainer = (props) => {
                     return {id: doc.id, ...doc.data()} // agrego el ID a cada uno de los items de la base de datos
                 }));
             }
-            // if(categoryId === undefined) {
-            //     setItems(res);
-            // } else {
-            //     setItems(res.filter((product) => product.category === categoryId));
-            // }
+        
         })
     }, [categoryId])
 

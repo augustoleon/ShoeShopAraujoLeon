@@ -3,10 +3,12 @@ import './App.css';
 import { NavBar } from './components/NavBar';
 import {ItemListContainer} from './components/ItemListContainer';
 import {ItemDetailContainer} from './components/ItemDetailContainer';
+import {Form} from './components/Form';
 
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { Cart } from './components/Cart';
+
 
 function App() {
   return (
@@ -29,8 +31,12 @@ function App() {
             </Route>
 
             <Route path= '/cart'>
-              <h2> ¡Estamos a punto de terminar!</h2>
+              {/* <div style={{fontFamily: 'Zen Dots', fontSize: '28px'}}> ¡Estamos a punto de terminar!</div> */}
               <Cart/>
+            </Route>
+
+            <Route path= '/form'>
+              <Form/>
             </Route>
 
           </Switch>      
