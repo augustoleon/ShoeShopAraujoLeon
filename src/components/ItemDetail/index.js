@@ -5,7 +5,7 @@ import { CartContext } from '../../context/CartContext';
 
 import './itemDetailStyle.css';
 
-const limitStock= 5;
+const limitStock= 300;
 
 export const ItemDetail = ({ item }) => {
     const [count, setCount] = useState(0);
