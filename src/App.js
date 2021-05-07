@@ -19,11 +19,11 @@ function App() {
           <NavBar/>
           <Switch>
             <Route exact path= '/'>
-              <ItemListContainer greeting= 'Component List here'/>
+              <ItemListContainer greeting= '¡Elige lo mejor, sientete mejor!'/>
             </Route>
 
             <Route exact path='/category/:categoryId'>
-              <ItemListContainer greeting= 'Shoe/es' />
+              <ItemListContainer greeting= 'Shoes' />
             </Route>
 
             <Route path= '/item/:itemId'>
@@ -31,7 +31,6 @@ function App() {
             </Route>
 
             <Route path= '/cart'>
-              {/* <div style={{fontFamily: 'Zen Dots', fontSize: '28px'}}> ¡Estamos a punto de terminar!</div> */}
               <Cart/>
             </Route>
 

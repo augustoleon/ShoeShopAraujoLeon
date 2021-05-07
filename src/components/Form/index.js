@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 
-import { getFirestore, getFirebase } from '../../firebase';
+import { getFirestore } from '../../firebase';
 import firebase from 'firebase/app';
 
 import './formStyle.css';
@@ -42,7 +42,6 @@ export const Form = () => {
 
         itemsCollection.get()
         .then(res => {
-            console.log('itemsCollection.get().then( ', res)
 
             const batch = db.batch();
             if(res.exist){
@@ -66,11 +65,12 @@ export const Form = () => {
         })
 
     }
+        
 
     return (
         <div>
             
-            {idOrder?
+            {idOrder ? 
                 <>
                 <div className='check' style={{marginLeft: '650px', marginTop: '70px', marginBottom:'30px'}}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-check2-circle" viewBox="0 0 16 16">
@@ -78,40 +78,41 @@ export const Form = () => {
                         <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
                     </svg>
                 </div>
-                <h1>Orden Completada</h1>
+                <div style={{fontFamily: 'Zen Dots', fontSize: '28px', marginBottom:'20px'}}>Orden Completada</div>
+                <div className='comprobante' >Su comprobante de compra es: <spam className='order'>{idOrder}</spam></div>
                 <Link to='/' onClick= {() => clear()}> 
-                    <div>Limpiar el carrito e ir al home</div>
+                    <p style={{fontSize: '18px'}}>Limpiar el carrito e ir al home</p>
                 </Link>
                 </>
                 :            
-                totalItems?
+                totalItems ?
                 
-                <form className="row g-3 formStyle" onSubmit={gererarOrden}>                    
-                    <h2> ¡Ya casí!</h2>
-                    <h5> Completar Formulario </h5>
-                    <div className='nombreTel'>
-                        <div className="mb-3">
-                            <label className="form-label"> Nombre y Apellido</label>
-                            <input type="text" className="form-control"  value={name} onChange={(e)=> setName(e.target.value)} placeholder="Example input placeholder"/>
+                    <form className="row g-3 formStyle" onSubmit={gererarOrden}>                    
+                        <div style={{fontFamily: 'Zen Dots', fontSize: '28px'}}> ¡Ya casí!</div>
+                        <p style={{fontFamily: 'Zen Dots', fontSize: '18px'}}> Completar Formulario </p>
+                        <div className='nombreTel'>
+                            <div className="mb-3">
+                                <label className="form-label"> Nombre y Apellido</label>
+                                <input type="text" className="form-control"  value={name} onChange={(e)=> setName(e.target.value)} placeholder="Nombre y Apellido"/>
+                            </div>
+                            <div className="mb-3">
+                                <label  className="form-label"> Teléfono</label>
+                                <input type="text" className="form-control" value={phone} onChange={(e)=> setPhone(e.target.value)} placeholder="Teléfono"/>
+                            </div>
                         </div>
-                        <div className="mb-3">
-                            <label  className="form-label"> Telefono</label>
-                            <input type="text" className="form-control" value={phone} onChange={(e)=> setPhone(e.target.value)} placeholder="Another input placeholder"/>
+                        <div className="mb-3 mailContainer">
+                            <label  className="form-label">Correo electrónico</label>
+                            <input type="text" className="form-control"value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email"/>
                         </div>
-                    </div>
-                    <div className="mb-3">
-                        <label  className="form-label">Correo electronico</label>
-                        <input type="text" className="form-control"value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Another input placeholder"/>
-                    </div>
-                    <div className="col-12">
-                        {name && phone && email ?
-                                <button type="submit" className="btn btn-primary" >Sign in</button>
-                                :
-                                <button disabled type="submit" className="btn btn-primary" style={{background: 'grey'}}>Sign in</button>
- 
-                         }
-                    </div>
-                </form>
+                        <div className="col-12">
+                            {name && phone && email ?
+                                    <button type="submit" className="btn btn-primary" >Sign in</button>
+                                    :
+                                    <button disabled type="submit" className="btn btn-primary" style={{background: 'grey', cursor:'pointer'}}>Sign in</button>
+    
+                            }
+                        </div>
+                    </form>
 
                 :
 

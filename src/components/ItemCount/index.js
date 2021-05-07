@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
-import { CartWidget } from '../CartWidget';
 
 export const ItemCount = ({ stock, initial, onAdd })=> {
 

@@ -7,12 +7,50 @@
 .nombreTel {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
 
-    border: 1px solid black ;
+    font-family: 'Zen Dots', cursive;
 }
 
 .nombreTel input{
     width: 100%;
+    margin-right: 5px;
+}
+
+.mailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Zen Dots', cursive;
+}
+
+.comprobante {
+    display: flex;
+    font-family: 'Zen Dots', cursive;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-top: 30px;
+}
+
+.order{ 
+    color: chartreuse;
+    margin-bottom: 30px;
+    background-color: orangered;
+    border-radius: 30%;
+    margin-top: 10px;
+    width: 350px;
+}
+
+
+.mailContainer input {
+    width: 40%;
 }
 
 .form-control {

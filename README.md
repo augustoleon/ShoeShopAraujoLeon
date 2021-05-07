@@ -1,3 +1,4 @@
+# E-commerce ShoeShop
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -14,57 +15,37 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+##¿Que es este proyecto? 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Es un proyecto que simula una ***e-commerce*** donde encontrarás un catalogo de productos el cual podrás seleccionar, agregar una cantidad deseada del mismo producto y te permitira poder seguir añadiendo items de productos las veces que sean necesarias, cuando finalices la compra, podrás remover los productos que consideres no agregar a la orden final, una vez tomada la decisión de que producto llevar podrás generar la orden la cual te llevara a completar un formulario, dentro del mismo tendrás que completar todos los datos para que la orden pueda ser generada y bien así finalizada la compra. 
 
-### `npm run build`
+## Dependencias necesarias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- react v 17.0.1
+- react-dom v 17.0.1
+- react-router-dom v 5.2.0
+- firebase v 8.4.1
+- boobstraps-icons v 1.4.0
+- react-scripts v 4.0.3
+- web-vitals v 1.1.0
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ¿Como esta hecho?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Está creada con distintos componentes que manejan una responsabilidad, utilice __bootstrap__ y __CSS__ para dar estilos y __Googlefonts__ para la tipografía.
 
-### `npm run eject`
+- __NavBar:__  Incluye una barra de menú que contiene el nombre de la tienda y un listado de categorías clickeable, incorpore estilos desde boobstraps
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- __CartWidget:__ Contiene el icono de Cart e indica cuando un producto está agregaro al carrito,es reactivo con el contexto, se encuentra dentro del NavBar. 
+- __ItemCount:__ Incrementa y decrementa los productos a añadir en el carrito
+- __Item:__ Es un componente destinado a mostrar información breve del producto que el user clickeara luego par acceder a los detalles 
+- __ItemList:__ Es un agrupador de un set de componentes Item.js
+- __ItemDetailContainer:__ Muestra la vista de detalle de un item, incluyendo precio, nombre del producto y foto. 
+- __CartContext:__ Implemente React Context para mantener el estado de compra del user, al clickear en ItemDetail se debe guarda su cantidad en forma de objeto
+__Cart:__  Contiene el desglose de la compra y el precio total
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Por otro lado... 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Configure una cuenta de ***firebase*** y cree un cloud de ***firestore*** 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Por ultimo** agregue un componente ***Form*** que incluye el evento generarOrden la cual crea una colección nueva en firebase y se añade los datos que se encuentran dentro del formulario mostrado

@@ -21,9 +21,9 @@ export const CartProvider = ({ children }) => {
     },[cart])
     
 
-    const cartLength = () => {
-        return cart.reduce((accumulator, currentValue)=> {return accumulator + currentValue.cant}, 0);
-    }
+    // const cartLength = () => {
+    //     return cart.reduce((accumulator, currentValue)=> {return accumulator + currentValue.cant}, 0);
+    // }
 
     const addItem = (newItem, quantity) => {
         console.log("cant", quantity)

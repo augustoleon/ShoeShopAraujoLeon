@@ -20,11 +20,8 @@ export const ItemListContainer = (props) => {
         const prom = filter.get(); // Traeme todo lo que exista en esa colección
 
         prom.then((snapshot) => {
-            console.log('se consultaron los datos');
-            console.log(snapshot);
 
             if(snapshot.size > 0){
-                console.log(snapshot.docs.map(doc => doc.data()))
                 setItems(snapshot.docs.map(doc => {
                     return {id: doc.id, ...doc.data()} // agrego el ID a cada uno de los items de la base de datos
                 }));
@@ -35,7 +32,10 @@ export const ItemListContainer = (props) => {
 
     return (
         <div>
-            {props.greeting}
+            <div style={{fontFamily: 'Zen Dots', fontSize: '28px', margin: '10px 0px'}}>
+                {props.greeting}
+
+            </div>
             <div className="container-fluid">
                 <ItemList items = {items}/>
             </div>

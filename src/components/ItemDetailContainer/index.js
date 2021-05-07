@@ -33,7 +33,11 @@ export const  ItemDetailContainer = () => {
         <>
             {
                 item.title ? 
-                <ItemDetail item={item} /> : <div>loading...</div>
+                    <ItemDetail item={item} />
+
+                    :        
+
+                    <div style={{fontFamily: 'Zen Dots', fontSize: '30px', marginTop: '200px'}}>loading...</div>
             }
         </>
     )
