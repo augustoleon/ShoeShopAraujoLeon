@@ -106,9 +106,9 @@ export const Form = () => {
                         </div>
                         <div className="col-12">
                             {name && phone && email ?
-                                    <button type="submit" className="btn btn-primary" >Sign in</button>
+                                    <button type="submit" className="btn btn-primary" >Generar orden</button>
                                     :
-                                    <button disabled type="submit" className="btn btn-primary" style={{background: 'grey', cursor:'pointer'}}>Sign in</button>
+                                    <button disabled type="submit" className="btn btn-primary" style={{background: 'grey', cursor:'pointer'}}>Generar orden</button>
     
                             }
                         </div>
