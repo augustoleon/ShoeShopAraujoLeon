@@ -1,11 +1,11 @@
 # E-commerce ShoeShop
-# Getting Started with Create React App
+# Empezamos con Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue bootstrapeado con [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+Puedes correrlo con:
 
 ### `npm start`
 
@@ -20,7 +20,7 @@ You will also see any lint errors in the console.
 Es un proyecto que simula una ***e-commerce*** donde encontrarás un catalogo de productos el cual podrás seleccionar, agregar una cantidad deseada del mismo producto y te permitira poder seguir añadiendo items de productos las veces que sean necesarias, cuando finalices la compra, podrás remover los productos que consideres no agregar a la orden final, una vez tomada la decisión de que producto llevar podrás generar la orden la cual te llevara a completar un formulario, dentro del mismo tendrás que completar todos los datos para que la orden pueda ser generada y bien así finalizada la compra. 
 
 ### Demo
-https://drive.google.com/file/d/1I330mryIS9iiutBfB3rWGdAL-3Uv2_Dy/view?usp=sharing
+https://drive.google.com/file/d/1UGkSt9AjKIwk1UyKcEHriAFQV2LWmeH4/view?usp=sharing
 
 ## Dependencias necesarias
 
