@@ -19,49 +19,48 @@ export const CartProvider = ({ children }) => {
         setTotalItems(totItems);
         setTotalPrecio(precio)
     },[cart])
-    
-
-    // const cartLength = () => {
-    //     return cart.reduce((accumulator, currentValue)=> {return accumulator + currentValue.cant}, 0);
-    // }
 
     const addItem = (newItem, quantity) => {
         console.log("cant", quantity)
         let prodIndex = cart.findIndex(e => e.item.id === newItem.id);
         if (prodIndex === -1) {
             setCart(cart => [...cart, {item: newItem, cant: quantity} ])
-            // setCart([...cart, {item: newItem, cant: quantity} ])
         } else {
             let modifiedCart = [...cart];
             modifiedCart[prodIndex].cant += quantity;
             setCart(modifiedCart)
         }        
 
-    }// agregar cierta cantidad de un ítem al carrito
-
+    }
 
     const removeItem = (itemId) =>{
+        //  Filtro mi cart para que me devuelva todos los items distintos al ITEM que queremos remover
         const newCart = cart.filter(e => e.item.id !== itemId)
-        // Si no es igual, me lo quedo, si es igual, lo descarto
-
         setCart(newCart)
+    } 
 
-    } // Remover un item del cart por usando su id
-
+    // Remover todos los items
     const clear = () =>{
         setCart([]);
-    } // Remover todos los items
+    }
 
     const isInCart = (id) => {
         const currentItem = cart.find(e => e.item.id === id);
-
         return currentItem ? true : false;
-    } //true|false
+    }
 
 
     return (
-        //<CartContext.Provider value = {{cart, addItem, removeItem, clear, isInCart}}>
-        <CartContext.Provider value = {{ cart, addItem, removeItem, clear,isInCart, totalItems, totalPrecio }}>
+        <CartContext.Provider value = {{ 
+            cart,
+            addItem,
+            removeItem,
+            clear,
+            isInCart,
+            totalItems,
+            totalPrecio
+        }}
+        >
             {children}
         </CartContext.Provider>
     )

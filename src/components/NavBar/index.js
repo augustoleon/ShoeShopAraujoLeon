@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import './navBarStyle.css';
 
-export const NavBar = ({item}) => {
+export const NavBar = () => {
     return <div>
                 <nav className="navbar navbar-expand-lg navbar-black bg-dark navBarStyle">
                     <div className='shoeShopButton'>

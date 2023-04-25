@@ -1,8 +1,9 @@
 .itemDetail { 
     display: flex;
+    border: 15px solid blueviolet;
     margin-top: 50px;
     justify-content: center;
-    margin-right: 100px;
+    /* margin-right: 100px; */
 }
 
 .itemDetail img {

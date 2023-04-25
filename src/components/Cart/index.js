@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
 import { CartContext } from '../../context/CartContext';
-
-
 import './cartStyle.css';
 
 export const Cart = () => {
@@ -24,6 +23,7 @@ export const Cart = () => {
                             <div>{cartItem.item.title} </div>
                             <div> ${cartItem.item.price}</div>
                             <div>Cantidad: {cartItem.cant}</div>
+                            <div>subtotal: {cartItem.item.price * cartItem.cant}</div>
                         </div>
                         <button type="button" className="btn btn-danger" onClick= {() => removeItem(cartItem.item.id)}> Borrar </button>
                     </div>)

@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { CartContext } from '../../context/CartContext';
-
-import { getFirestore } from '../../firebase';
+import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
 
+import { CartContext } from '../../context/CartContext';
+import { getFirestore } from '../../firebase';
+
 import './formStyle.css';
-import { Link } from 'react-router-dom';
  
 export const Form = () => {
 
@@ -21,7 +21,6 @@ export const Form = () => {
 
         e.preventDefault();
         const comprador = { name, phone, email};
-        console.log(comprador) 
 
         const db = getFirestore();
         const ordersCollection = db.collection('orders');
@@ -31,7 +30,7 @@ export const Form = () => {
         });
 
         ordersCollection
-        .add({buyer: comprador, items, date, total: totalPrecio}) // Me devuelve una promesa
+        .add({buyer: comprador, items, date, total: totalPrecio}) // promise
         .then( doc => { // traer el ID del componente y guardarlo en un estado
             setIdOrder(doc.id)
         })
